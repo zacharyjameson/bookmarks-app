@@ -8,7 +8,8 @@ function deleteBookmarkRequest(bookmarkId, callback) {
   fetch(config.API_ENDPOINT + `/${bookmarkId}`, {
     method: "DELETE",
     headers: {
-      'authorization': `bearer ${config.API_KEY}`,
+      "content-type": "application/json",
+      "authorization": `bearer ${config.API_KEY}`,
     },
   })
     .then((res) => {
@@ -20,6 +21,7 @@ function deleteBookmarkRequest(bookmarkId, callback) {
       return res.json();
     })
     .then((data) => {
+      console.log({ data });
       callback(bookmarkId);
     })
     .catch((error) => {

@@ -1,7 +1,7 @@
 import React from "react";
 
 const BookmarksContext = React.createContext({
-  booksmarks: [],
+  bookmarks: [],
   addBookmark: () => {},
   deleteBookmark: () => {},
 });
