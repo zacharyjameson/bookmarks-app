@@ -10,9 +10,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "CI=true react-scripts test --colors",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "vercel --prod",
+    "prehello": "echo 'before hello!'",
+    "posthello": "echo 'after hello!'",
+    "hello": "echo 'hello!'"
   },
   "eslintConfig": {
     "extends": "react-app"
